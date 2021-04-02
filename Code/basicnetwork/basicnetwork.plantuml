@@ -1,0 +1,320 @@
+@startuml
+
+title __BASICNETWORK's Class Diagram__\n
+
+  namespace  {
+    namespace asicnetwork {
+      class basicnetwork.Dijkstra {
+          - leaf_paths : HashMap<Node, HashMap<Node, Node>>
+          - name : String
+          - net : Network
+          - root_paths : HashMap<Node, HashMap<Node, Node>>
+          + Dijkstra()
+          + checkConnectivity()
+          + clearDijkstraTrees()
+          + computeLeafPaths()
+          + computeRootPaths()
+          + getClosestLeaf()
+          + getClosestRoot()
+          + getMinPath()
+          + getMinPath2()
+          + getMinPathBiDi()
+          + getMinPathCheck()
+          + getMinPathCheck()
+          + parallelMinPath()
+          - constructPathFromNext()
+          - constructPathFromPrev()
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace asicnetwork {
+      class basicnetwork.Dijkstra.NodeComparator {
+          + compare()
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace asicnetwork {
+      class basicnetwork.Dijkstra.PriorityNodeComparator {
+          + compare()
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace asicnetwork {
+      class basicnetwork.Dijkstra {
+          - leaf_paths : HashMap<Node, HashMap<Node, Node>>
+          - name : String
+          - net : Network
+          - root_paths : HashMap<Node, HashMap<Node, Node>>
+          + Dijkstra()
+          + checkConnectivity()
+          + clearDijkstraTrees()
+          + computeLeafPaths()
+          + computeRootPaths()
+          + getClosestLeaf()
+          + getClosestRoot()
+          + getMinPath()
+          + getMinPath2()
+          + getMinPathBiDi()
+          + getMinPathCheck()
+          + getMinPathCheck()
+          + parallelMinPath()
+          - constructPathFromNext()
+          - constructPathFromPrev()
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace asicnetwork {
+      class basicnetwork.Dijkstra.NodeComparator {
+          + compare()
+          ~ NodeComparator()
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace asicnetwork {
+      class basicnetwork.Dijkstra.PriorityNodeComparator {
+          + compare()
+          ~ PriorityNodeComparator()
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace asicnetwork {
+      class basicnetwork.Edge {
+          - from : Node
+          - name : String
+          - to : Node
+          - weight : float
+          + Edge()
+          + equalsReverse()
+          + getFrom()
+          + getName()
+          + getReverse()
+          + getTo()
+          + getWeight()
+          + setWeight()
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace asicnetwork {
+      class basicnetwork.Edge {
+          - from : Node
+          - name : String
+          - to : Node
+          - weight : float
+          + Edge()
+          + equalsReverse()
+          + getFrom()
+          + getName()
+          + getReverse()
+          + getTo()
+          + getWeight()
+          + setWeight()
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace asicnetwork {
+      class basicnetwork.Network {
+          - edges : Map<String, Edge>
+          - nodes : Map<String, Node>
+          + Network()
+          + Network()
+          + addEdge()
+          + addNode()
+          + getEdge()
+          + getEdges()
+          + getNode()
+          + getNodes()
+          + getRandomEdge()
+          + getRandomNode()
+          + setEdges()
+          + setNodes()
+          + testNetwork()
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace asicnetwork {
+      class basicnetwork.Network {
+          - edges : Map<String, Edge>
+          - nodes : Map<String, Node>
+          + Network()
+          + Network()
+          + addEdge()
+          + addNode()
+          + getEdge()
+          + getEdges()
+          + getNode()
+          + getNodes()
+          + getRandomEdge()
+          + getRandomNode()
+          + setEdges()
+          + setNodes()
+          + testNetwork()
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace asicnetwork {
+      class basicnetwork.Node {
+          - incoming : Map<Node, Edge>
+          - name : String
+          - outgoing : Map<Node, Edge>
+          - priority : double
+          + Node()
+          + addIncoming()
+          + addOutgoing()
+          + getEdgeFrom()
+          + getEdgeTo()
+          + getInDegree()
+          + getIncoming()
+          + getIncomingEdges()
+          + getName()
+          + getOutDegree()
+          + getOutgoing()
+          + getOutgoingEdges()
+          + getPriority()
+          + setPriority()
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace asicnetwork {
+      class basicnetwork.Node {
+          - incoming : Map<Node, Edge>
+          - name : String
+          - outgoing : Map<Node, Edge>
+          - priority : double
+          + Node()
+          + addIncoming()
+          + addOutgoing()
+          + getEdgeFrom()
+          + getEdgeTo()
+          + getInDegree()
+          + getIncoming()
+          + getIncomingEdges()
+          + getName()
+          + getOutDegree()
+          + getOutgoing()
+          + getOutgoingEdges()
+          + getPriority()
+          + setPriority()
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace asicnetwork {
+      class basicnetwork.Path {
+          - cost : double
+          - edges : ArrayList<Edge>
+          + Path()
+          + Path()
+          + add()
+          + extendBack()
+          + extendFront()
+          + getBack()
+          + getCost()
+          + getEdges()
+          + getFront()
+          + size()
+          + toString()
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace asicnetwork {
+      class basicnetwork.Path {
+          - cost : double
+          - edges : ArrayList<Edge>
+          + Path()
+          + Path()
+          + add()
+          + extendBack()
+          + extendFront()
+          + getBack()
+          + getCost()
+          + getEdges()
+          + getFront()
+          + size()
+          + toString()
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace asicnetwork {
+      class basicnetwork.PriorityNode {
+          - node : Node
+          - priority : double
+          + PriorityNode()
+          + getNode()
+          + getPriority()
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace asicnetwork {
+      class basicnetwork.PriorityNode {
+          - node : Node
+          - priority : double
+          + PriorityNode()
+          + getNode()
+          + getPriority()
+      }
+    }
+  }
+  
+
+  basicnetwork.Dijkstra +-down- basicnetwork.Dijkstra.NodeComparator
+  basicnetwork.Dijkstra +-down- basicnetwork.Dijkstra.PriorityNodeComparator
+  basicnetwork.Dijkstra.NodeComparator .up.|> Comparator
+  basicnetwork.Dijkstra.PriorityNodeComparator .up.|> Comparator
+  basicnetwork.Dijkstra +-down- basicnetwork.Dijkstra.NodeComparator
+  basicnetwork.Dijkstra +-down- basicnetwork.Dijkstra.PriorityNodeComparator
+  basicnetwork.Dijkstra.NodeComparator .up.|> java.util.Comparator<basicnetwork.Node>
+  basicnetwork.Dijkstra.PriorityNodeComparator .up.|> java.util.Comparator<basicnetwork.PriorityNode>
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml

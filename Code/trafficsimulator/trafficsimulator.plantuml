@@ -1,0 +1,243 @@
+@startuml
+
+title __TRAFFICSIMULATOR's Class Diagram__\n
+
+  namespace trafficsimulator {
+    class trafficsimulator.Cycle {
+        - roads : Set<Road>
+        + Cycle()
+        + clear()
+        + contains()
+        + equals()
+        + getInRoads()
+        + getRoads()
+        + hashCode()
+        + isCritical()
+        + isLocked()
+        + toString()
+    }
+  }
+  
+
+  namespace trafficsimulator {
+    class trafficsimulator.ExternalLoadHandler {
+        - net : TrafficNetwork
+        + ExternalLoadHandler()
+        + startElement()
+    }
+  }
+  
+
+  namespace trafficsimulator {
+    class trafficsimulator.Junction {
+        - cap : double
+        - t_last_cross : double
+        - type : String
+        + Junction()
+        + getCap()
+        + getTLast()
+        + getType()
+        + setCap()
+        + setTLast()
+    }
+  }
+  
+
+  namespace trafficsimulator {
+    class trafficsimulator.NetHandler {
+        - edge : Edge
+        - edges : HashMap<String, Edge>
+        - node : Node
+        - nodes : HashMap<String, Node>
+        - total_length : float
+        + endElement()
+        + getEdges()
+        + getNodes()
+        + printTotalLength()
+        + startElement()
+    }
+  }
+  
+
+  namespace trafficsimulator {
+    class trafficsimulator.Road {
+        - capacity : int
+        - critical_cycles : Set<Cycle>
+        - delayed_adds : Queue<Vehicle>
+        - jam_occupancy : int
+        - length : float
+        - load : float
+        {static} - mu : float
+        - n_lanes : int
+        - occupancy : int
+        - speed : float
+        - t_last_enter : double
+        - t_last_exit : double
+        - type : String
+        - vehicles : LinkedList<Vehicle>
+        - w_last : float
+        + Road()
+        + addCycle()
+        + addDelayed()
+        + addVehicle()
+        + clear()
+        + findCriticalCycle()
+        + getCapacity()
+        + getComplementCycles()
+        + getCycles()
+        + getCyclesInRoads()
+        + getEMAWeight()
+        + getFrom()
+        + getFront()
+        + getInRoads()
+        + getJamOccupancy()
+        + getLastEnterT()
+        + getLastExitT()
+        + getLength()
+        + getLoad()
+        + getNLanes()
+        + getNextDelayed()
+        + getOccupancy()
+        + getOutRoads()
+        + getReverse()
+        + getSpeed()
+        + getTo()
+        + getTtr()
+        + getType()
+        + getVehicles()
+        + hasDelayedAdd()
+        + isCongested()
+        + isCritical()
+        + isFull()
+        + isOccupied()
+        + isQuasiFull()
+        + removeBack()
+        + removeCycle()
+        + removeFront()
+        + setLastEnterT()
+        + setLastExitT()
+        + setLoad()
+        - updateEMA()
+    }
+  }
+  
+
+  namespace trafficsimulator {
+    class trafficsimulator.SimVars {
+        {static} + jam_density : float
+        {static} + max_density : float
+        {static} + max_speed : float
+        {static} + tff : float
+        {static} + tjf : float
+        {static} + tjj : float
+    }
+  }
+  
+
+  namespace trafficsimulator {
+    class trafficsimulator.SimulationTest {
+        ~ sim : TrafficSimulation
+        + SimulationTest()
+        + SimulationTest()
+        + getNextRoad()
+        {static} + main()
+        + makeFDRHetro()
+        + makeFDRHomo()
+        + printDensities()
+    }
+  }
+  
+
+  namespace trafficsimulator {
+    class trafficsimulator.TrafficNetwork {
+        + TrafficNetwork()
+        + addExternalLoads()
+        + getJunction()
+        + getRoad()
+        {static} + main()
+    }
+  }
+  
+
+  namespace trafficsimulator {
+    class trafficsimulator.TrafficSimulation {
+        - last_hopper : Vehicle
+        - last_hopper_edge : Edge
+        - net : TrafficNetwork
+        - priority_vehicles : PriorityQueue<Vehicle>
+        - step : int
+        - t : double
+        - vehicles : HashMap<String, Vehicle>
+        + TrafficSimulation()
+        + addVehicleRoute()
+        + addVehicleRoute()
+        + checkArrival()
+        + clearSimulation()
+        + getLastMover()
+        + getLastMoverEdge()
+        + getNetwork()
+        + getNextTime()
+        + getNumberOfVehicles()
+        + getPriorityVehicles()
+        + getStep()
+        + getTime()
+        + getVehicles()
+        {static} + main()
+        + priorityQueueEmpty()
+        + setTime()
+        + simStep()
+        + updateEdgeWeights()
+        + writeDensities()
+        + writeLocks()
+        - addDelayedVehicle()
+        - f()
+        - getTHead()
+        - putInExitQueue()
+        - updateFronts()
+    }
+  }
+  
+
+  namespace trafficsimulator {
+    class trafficsimulator.Vehicle {
+        - name : String
+        - route : LinkedList<Road>
+        - t_enter_sim : double
+        - t_exit : double
+        - t_exit_sim : double
+        - t_min : double
+        + Vehicle()
+        + Vehicle()
+        + advanceRoute()
+        + arrived()
+        + compareTo()
+        + extendRoute()
+        + getCurrentEdge()
+        + getDestination()
+        + getName()
+        + getNextEdge()
+        + getRouteLength()
+        + getTExit()
+        + getTInSim()
+        + getTMin()
+        + isAtFront()
+        + setTExit()
+        + setTExitSim()
+        + setTMin()
+    }
+  }
+  
+
+  trafficsimulator.ExternalLoadHandler -up-|> org.xml.sax.helpers.DefaultHandler
+  trafficsimulator.NetHandler -up-|> org.xml.sax.helpers.DefaultHandler
+  trafficsimulator.Vehicle .up.|> java.lang.Comparable
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml
