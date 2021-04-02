@@ -1,0 +1,15 @@
+<additionals>
+    <terminal id="MSC_PSA_European_Terminal" edge="422783059" capacity="9000000"/>
+    <terminal id="DP_World_Antwerp_Gateway_Terminal" edge="-gneE75" capacity="2500000"/>
+    <terminal id="PSA_Antwerp_Europa_Terminal" edge="-gneE103" capacity="1800000"/>
+    <terminal id="PSA_Antwerp_Noordzee_Terminal" edge="gneE114.376" capacity="2600000"/>
+    <terminal id="Antwerp_Container_Terminal" edge="gneE127" capacity="1000000"/>
+</additionals>
+
+
+
+
+
+
+
+
