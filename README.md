@@ -18,7 +18,7 @@ The parameters for the mescopic traffic simulator were based on "Vehicle-based m
 
 Obtaining data on the distribution of destinations of orders (apart from the 5 container terminals in the port of Antwerp) is very difficult. In order to model this, we assumed a uniform distibution over road located in areas that are marked as "industrial" by OpenStreetMap. The python script 'ConfigurationCode/SelectDestinations.py' precomputes these potential destinations which are written to the file 'industrial_edges.add.xml'. 
 
-
+All the input needed for the simulation can be found in the folder 'input'. Note that two of the files have to be extracted before they can be used.
 
 
 ## Different parts of the code
